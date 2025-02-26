@@ -1,0 +1,153 @@
+body {
+  background: #f8f8f8;
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  max-width: 80%;
+  margin: 2.5rem auto;
+}
+
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.test-count {
+  font-size: 0.875rem;
+  color: #757575;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.625rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.75rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #999;
+}
+
+.table-row {
+  background: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border-left: 1rem solid;
+}
+
+.table-row-hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+.status-text {
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.table-row td {
+  padding: 0.875rem;
+  border-top: 0.3125rem solid transparent;
+}
+
+.name-text,
+.type-text,
+.site-text {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #474747;
+}
+
+.table-row-online {
+  border-left: 0.25rem solid #1bda9d;
+}
+
+.table-row-paused {
+  border-left: 0.25rem solid #ff8346;
+}
+
+.table-row-stopped {
+  border-left: 0.25rem solid #fe4848;
+}
+
+.table-row-draft {
+  border-left: 0.25rem solid #5c5c5c;
+}
+
+.button {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.button-results {
+  background: #2ee5ac;
+  color: white;
+}
+
+.button-finalize {
+  background: #7d7d7d;
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+}
+
+.no-results p {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 21.94px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #222222;
+}
+
+.reset-button {
+  background: #2ee5ac;
+  color: white;
+  margin-top: 20px;
+}
