@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Этот проект представляет собой панель мониторинга для A/B-тестирования, в которой пользователи могут просматривать, сортировать и фильтровать тесты. Все тесты можно фильтровать по имени, а также сортировать по столбцам, включая **Name**, **Type**, **Status**, и **Site**. В проекте используется **React** и **TypeScript** для обеспечения хорошей типизации и производительности.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Основные возможности:
+- Фильтрация тестов по имени.
+- Сортировка данных по столбцам: **Name**, **Type**, **Status**, **Site**.
+- Навигация по страницам с результатами и финализацией тестов.
+- Подключение к локальному серверу для фейковых данных с помощью **json-server**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Всего внутри проекта
 
-- Configure the top-level `parserOptions` property like this:
+1. **`src/`** — исходный код проекта:
+   - **`components/`** — компоненты React:
+     - **`Dashboard.tsx`** — компонент панели мониторинга.
+     - **`Table.tsx`** — компонент таблицы с возможностью сортировки и фильтрации.
+     - **`TableRow.tsx`** — компонент строки таблицы.
+   - **`api/`** — функции для работы с API:
+     - **`api.ts`** — функции для получения данных о тестах и сайтах.
+   - **`utils/`** — вспомогательные утилиты:
+     - **`sorting.ts`** — функции для сортировки данных.
+   - **`styles/`** — стили в SCSS формате:
+     - **`table.css`** — стили для таблицы и компонентов.
+   - **`App.tsx`** — главный компонент приложения.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+2. **`public/`** — публичные файлы:
+   - **`index.html`** — основной HTML файл.
+   - **`favicon.ico`** — иконка сайта.
+
+3. **`db.json`** — фейковая база данных для **json-server**.
+
+---
+
+## Установка
+
+### 1. Клонирование репозитория
+
+Для начала клонируйте репозиторий с помощью Git:
+
+```bash
+git clone https://github.com/dev-tokumei/dashboard.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2. Установка зависимостей
+```bash
+cd dashboard
+npm install
 ```
+### Запуск локального сервера
+Проект использует json-server для работы с фейковой базой данных. Для запуска сервера выполните следующую команду:
+
+```bash
+npm run server
+```
+Это запустит сервер на порту 3100, который будет использовать файл db.json в качестве базы данных для тестов.
+
+### Запуск приложения
+После того как сервер запущен, можно запустить React-приложение:
+
+```bash
+npm run dev
+```
+
+Приложение будет доступно по адресу [http://localhost:5173/](http://localhost:3100/)
